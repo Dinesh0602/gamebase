@@ -4,36 +4,55 @@
     <meta name ="viewport" content="width=device-width,initial-scale=1.0">
     <title>GameBase</title>
 <link rel="stylesheet" href="stylesheet.css">
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+
+<script src="LOGIN.js"></script>
 </head>
 <body>
    <heading>
        <h1 ID = "heading"> <STRONG>ONELINE GAMES</STRONG></h1>
+       <nav>
+        <A HREF="Home.html">HOME</A>&nbsp;&nbsp;|&nbsp;&nbsp;  
+        
+        <A HREF="BUBBLESHOOTER.html">BUBBLE SHOOTER</A>&nbsp;&nbsp;|&nbsp;&nbsp; 
+        <A HREF="PUZZLE.html">PUZZLE</A>&nbsp;&nbsp;|&nbsp;&nbsp; 
+    <A HREF="QUIZ.html">QUIZ</A>&nbsp;&nbsp;|&nbsp;&nbsp; 
+    <A HREF="ARCADE.html">ARCADE</A>&nbsp;&nbsp;|&nbsp;&nbsp; 
+    <A HREF="RACING.html">RACING</A>&nbsp;&nbsp;|&nbsp;&nbsp; 
+    <A HREF="SPORT.html">SPORT</A>&nbsp;&nbsp;|&nbsp;&nbsp; 
+    <A HREF="JUMP&RUN.html">JUMP & RUN</A>&nbsp;&nbsp;|&nbsp;&nbsp; 
+    <A HREF="CARDS.html">CARDS</A>&nbsp;&nbsp;|&nbsp;&nbsp; 
+    <button onclick="signOut()" style="float: right;width: 80px;height: 30px;margin-bottom: 0px;color: rgb(248, 70, 6);background-color:  lightgreen;">Log Out</button>
+     </nav>
+     <br>
        <h2 ID="BUBBLESHOOTER"> PUZZLE</h2>
    </heading>
-   <div class="row3">
-    <div class="column3">
-        <a href=""><img src=""><h3></h3></a>
+   <div class="row">
+    <div class="column">
+        <a href="https://play.famobi.com/maze"style="text-decoration: none; color: red ;"><img src="images/MazeTeaser.jpg" width=100%><h3 style="background-color: rgb(96, 4, 124);text-align: center;">Maze</h3></a>
     </div>
-    <div class="column3">
-        <a href=""><img src=""><h3></h3></a>
+    <div class="column">
+        <a href="https://play.famobi.com/brain-trainer"style="text-decoration: none; color: red ;"><img src="images/BrainTrainerTeaser.jpg" width=100%><h3 style="background-color: rgb(96, 4, 124);text-align: center;">Brain Trainer</h3></a>
     </div>
-    <div class="column3">
-        <a href=""><img src=""><h3></h3></a>
+    <div class="column">
+        <a href="https://play.famobi.com/7-words"style="text-decoration: none; color: red ;"><img src="images/7WordsTeaser.jpg" width=100%><h3 style="background-color: rgb(96, 4, 124);text-align: center;">7 Words</h3></a>
     </div>
-    <div class="column3">
-        <a href=""><img src=""><h3></h3></a>
+    <div class="column">
+        <a href="https://play.famobi.com/kids-block-puzzle"style="text-decoration: none; color: red ;"><img src="images/KidsBlockPuzzleTeaser.jpg" width=100%><h3 style="background-color: rgb(96, 4, 124);text-align: center;">KidsBlockPuzzle</h3></a>
     </div>
-    <div class="column3">
-        <a href=""><img src=""><h3></h3></a>
+    <div class="column">
+        <a href="https://play.famobi.com/word-bird"style="text-decoration: none; color: red ;"><img src="images/WordBirdXMasTeaser.jpg" width=100%><h3 style="background-color: rgb(96, 4, 124);text-align: center;">Word Bird</h3></a>
     </div>
-    <div class="column3">
-        <a href=""><img src=""><h3></h3></a>
+    <div class="column">
+        <a href="https://play.famobi.com/word-bird"style="text-decoration: none; color: red ;"><img src="images/4InARowTeaser_.jpg" width=100%><h3 style="background-color: rgb(96, 4, 124);text-align: center;">4 In A Row</h3></a>
     </div>
-    <div class="column3">
-        <a href=""><img src=""><h3></h3></a>
+    <div class="column">
+        <a href="https://play.famobi.com/jigsaw-puzzle-classic"style="text-decoration: none; color: red ;"><img src="images/JigsawPuzzleClassicTeaser.jpg" width=100%><h3 style="background-color: rgb(96, 4, 124);text-align: center;">Jigsaw Puzzle Classic</h3></a>
     </div>
-    <div class="column3">
-        <a href=""><img src=""><h3></h3></a>
+    <div class="column">
+        <a href="https://play.famobi.com/sudoku-classic"style="text-decoration: none; color: red ;"><img src="images/SudokuClassicTeaser.jpg" width=100%><h3 style="background-color: rgb(96, 4, 124);text-align: center;">Sudoku Classic</h3></a>
     </div>
 </div>
 </body>

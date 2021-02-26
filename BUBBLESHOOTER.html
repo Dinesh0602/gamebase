@@ -4,38 +4,56 @@
     <meta name ="viewport" content="width=device-width,initial-scale=1.0">
     <title>GameBase</title>
 <link rel="stylesheet" href="stylesheet.css">
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+<script src="LOGIN.js"></script>
 </head>
 <body>
     <heading>
         <h1 ID="heading">
            <strong>ONELINE GAMES</strong>
         </h1>
+        <nav>
+            <A HREF="Home.html">HOME</A>&nbsp;&nbsp;|&nbsp;&nbsp;  
+            
+            <A HREF="BUBBLESHOOTER.html">BUBBLE SHOOTER</A>&nbsp;&nbsp;|&nbsp;&nbsp; 
+            <A HREF="PUZZLE.html">PUZZLE</A>&nbsp;&nbsp;|&nbsp;&nbsp; 
+        <A HREF="QUIZ.html">QUIZ</A>&nbsp;&nbsp;|&nbsp;&nbsp; 
+        <A HREF="ARCADE.html">ARCADE</A>&nbsp;&nbsp;|&nbsp;&nbsp; 
+        <A HREF="RACING.html">RACING</A>&nbsp;&nbsp;|&nbsp;&nbsp; 
+        <A HREF="SPORT.html">SPORT</A>&nbsp;&nbsp;|&nbsp;&nbsp; 
+        <A HREF="JUMP&RUN.html">JUMP & RUN</A>&nbsp;&nbsp;|&nbsp;&nbsp; 
+        <A HREF="CARDS.html">CARDS</A>&nbsp;&nbsp;|&nbsp;&nbsp; 
+        <button onclick="signOut()" style="float: right;width: 80px;height: 30px;margin-bottom: 0px;color: rgb(248, 70, 6);background-color:  lightgreen;">Log Out</button>
+         </nav>
+         <br>
 <h2 ID="BUBBLESHOOTER"> BUBBLE SHOOTER</h2>
     </heading>
-    <div class="row2">
-        <div class="column2">
-            <a href=""><img src=""><h3></h3></a>
+    <div class="row">
+        <div class="column">
+            <a href="https://play.famobi.com/soccer-bubbles" style="text-decoration: none; color: red ;"><img src="images/SoccerBubblesTeaser.jpg" width="100%"><h3 style="background-color: rgb(96, 4, 124);text-align: center;">SoccerBubbles</h3></a>
         </div>
-        <div class="column2">
-            <a href=""><img src=""><h3></h3></a>
+        <div class="column">
+            <a href="https://play.famobi.com/bubble-gems"style="text-decoration: none; color: red ;"><img src="images/BubbleGemsTeaser.jpg" width=100%><h3 style="background-color: rgb(96, 4, 124);text-align: center;">BubbleGems</h3></a>
         </div>
-        <div class="column2">
-            <a href=""><img src=""><h3></h3></a>
+        <div class="column">
+            <a href="https://play.famobi.com/orange-ranch"style="text-decoration: none; color: red ;"><img src="images/OrangeRanchTeaser.jpg" width=100%><h3 style="background-color: rgb(96, 4, 124);text-align: center;">OrangeRanch</h3></a>
         </div>
-        <div class="column2">
-            <a href=""><img src=""><h3></h3></a>
+        <div class="column">
+            <a href="https://play.famobi.com/orange-bubbles"style="text-decoration: none; color: red ;"><img src="images/OrangeBubblesTeaser.jpg" width=100%><h3 style="background-color: rgb(96, 4, 124);text-align: center;">OrangeBubbles</h3></a>
         </div>
-        <div class="column2">
-            <a href=""><img src=""><h3></h3></a>
+        <div class="column">
+            <a href="https://play.famobi.com/bubble-hamsters"style="text-decoration: none; color: red ;"><img src="images/BubbleHamstersTeaser.jpg" width=100%><h3 style="background-color: rgb(96, 4, 124);text-align: center;">BubbleHamsters</h3></a>
         </div>
-        <div class="column2">
-            <a href=""><img src=""><h3></h3></a>
+        <div class="column">
+            <a href="https://play.famobi.com/smarty-bubbles"style="text-decoration: none; color: red ;"><img src="images/SmartyBubbles20160620Teaser.jpg" width=100%><h3 style="background-color: rgb(96, 4, 124);text-align: center;">SmartyBubbles</h3></a>
         </div>
-        <div class="column2">
-            <a href=""><img src=""><h3></h3></a>
+        <div class="column">
+            <a href="https://play.famobi.com/smarty-bubbles-2"style="text-decoration: none; color: red ;"><img src="images/SmartyBubbles2Teaser.jpg" width=100%><h3 style="background-color: rgb(96, 4, 124);text-align: center;">SmartyBubbles-2</h3></a>
         </div>
-        <div class="column2">
-            <a href=""><img src=""><h3></h3></a>
+        <div class="column">
+            <a href="https://play.famobi.com/fuzzies"style="text-decoration: none; color: red ;"><img src="images/FuzziesTeaser.jpg" width=100%><h3 style="background-color: rgb(96, 4, 124);text-align: center;">Fuzzies</h3></a>
         </div>
     </div>
     

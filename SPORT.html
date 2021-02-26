@@ -4,36 +4,55 @@
     <meta name ="viewport" content="width=device-width,initial-scale=1.0">
     <title>GameBase</title>
 <link rel="stylesheet" href="stylesheet.css">
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+
+<script src="LOGIN.js"></script>
 </head>
 <body>
    <heading>
        <h1 ID = "heading"> <STRONG>ONELINE GAMES</STRONG></h1>
+       <nav>
+        <A HREF="Home.html">HOME</A>&nbsp;&nbsp;|&nbsp;&nbsp;  
+        
+        <A HREF="BUBBLESHOOTER.html">BUBBLE SHOOTER</A>&nbsp;&nbsp;|&nbsp;&nbsp; 
+        <A HREF="PUZZLE.html">PUZZLE</A>&nbsp;&nbsp;|&nbsp;&nbsp; 
+    <A HREF="QUIZ.html">QUIZ</A>&nbsp;&nbsp;|&nbsp;&nbsp; 
+    <A HREF="ARCADE.html">ARCADE</A>&nbsp;&nbsp;|&nbsp;&nbsp; 
+    <A HREF="RACING.html">RACING</A>&nbsp;&nbsp;|&nbsp;&nbsp; 
+    <A HREF="SPORT.html">SPORT</A>&nbsp;&nbsp;|&nbsp;&nbsp; 
+    <A HREF="JUMP&RUN.html">JUMP & RUN</A>&nbsp;&nbsp;|&nbsp;&nbsp; 
+    <A HREF="CARDS.html">CARDS</A>&nbsp;&nbsp;|&nbsp;&nbsp; 
+    <button onclick="signOut()" style="float: right;width: 80px;height: 30px;margin-bottom: 0px;color: rgb(248, 70, 6);background-color:  lightgreen;">Log Out</button>
+     </nav>
+     <br>
        <h2 ID="BUBBLESHOOTER"> SPORT</h2>
    </heading>
-   <div class="row7">
-    <div class="column7">
-        <a href=""><img src=""><h3></h3></a>
+   <div class="row">
+    <div class="column">
+        <a href="https://play.famobi.com/blaze-kick" style="text-decoration: none; color: red ;"><img src="images/BlazeKickTeaser.jpg" width="100%"><h3 style="background-color: rgb(96, 4, 124);text-align: center;">Blaze Kick</h3></a>
     </div>
-    <div class="column7">
-        <a href=""><img src=""><h3></h3></a>
+    <div class="column">
+        <a href="https://play.famobi.com/3d-free-kick-world-cup-18" style="text-decoration: none; color: red ;"><img src="images/3dFreeKickWorldCup18Teaser.jpg" width="100%"><h3 style="background-color: rgb(96, 4, 124);text-align: center;">3D Free Kick World Cup 18</h3></a>
     </div>
-    <div class="column7">
-        <a href=""><img src=""><h3></h3></a>
+    <div class="column">
+        <a href="https://play.famobi.com/3d-air-hockey" style="text-decoration: none; color: red ;"><img src="images/3dAirHockeyTeaser.jpg" width="100%"><h3 style="background-color: rgb(96, 4, 124);text-align: center;">3D Air Hockey</h3></a>
     </div>
-    <div class="column7">
-        <a href=""><img src=""><h3></h3></a>
+    <div class="column">
+        <a href="https://play.famobi.com/3d-darts" style="text-decoration: none; color: red ;"><img src="images/3dDartsTeaser.jpg" width="100%"><h3 style="background-color: rgb(96, 4, 124);text-align: center;">3D Darts</h3></a>
     </div>
-    <div class="column7">
-        <a href=""><img src=""><h3></h3></a>
+    <div class="column">
+        <a href="https://play.famobi.com/3d-basketball" style="text-decoration: none; color: red ;"><img src="images/3dBasketballTeaser.jpg" width="100%"><h3 style="background-color: rgb(96, 4, 124);text-align: center;">3D Basketball</h3></a>
     </div>
-    <div class="column7">
-        <a href=""><img src=""><h3></h3></a>
+    <div class="column">
+        <a href="https://play.famobi.com/table-tennis-world-tour" style="text-decoration: none; color: red ;"><img src="images/TableTennis_WorldTour_Teaser.jpg" width="100%"><h3 style="background-color: rgb(96, 4, 124);text-align: center;">Table Tennis World Tour</h3></a>
     </div>
-    <div class="column7">
-        <a href=""><img src=""><h3></h3></a>
+    <div class="column">
+        <a href="https://play.famobi.com/billiard-blitz-challenge" style="text-decoration: none; color: red ;"><img src="images/BilliardBlitzChallengeTeaser.jpg" width="100%"><h3 style="background-color: rgb(96, 4, 124);text-align: center;">Billiard Blitz Challenge</h3></a>
     </div>
-    <div class="column7">
-        <a href=""><img src=""><h3></h3></a>
+    <div class="column">
+        <a href="https://play.famobi.com/baseball-pro" style="text-decoration: none; color: red ;"><img src="images/BaseballProTeaser.jpg" width="100%"><h3 style="background-color: rgb(96, 4, 124);text-align: center;"> BASEBALL PRO</h3></a>
     </div>
 </div>
 </body>
