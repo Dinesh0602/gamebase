@@ -60,14 +60,14 @@ var firebaseConfig = {
   auth.onAuthStateChanged(function(user){
     
     if(user){
-    document.getElementsById(Home).style.display = "block";
-    document.getElementsById(Login).style.display = "none";
+    document.getElementsById("Home").style.display = "block";
+    document.getElementsById("Login").style.display = "none";
 
 
     }else{
       
-      document.getElementsById(Home).style.display = "none";
-      document.getElementsById(Login).style.display = "block";
+      document.getElementsById("Home").style.display = "none";
+      document.getElementsById("Login").style.display = "block";
 
       
     }
@@ -79,8 +79,8 @@ var firebaseConfig = {
     
     function signOut(){
       
-      auth.signOut();
-      alert("Signed Out");
+      firebase.auth().signOut();
+      
       
     }
     
