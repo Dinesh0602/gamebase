@@ -47,7 +47,7 @@ NAV a
     text-align: center;
     color: coral ;
 }
-.login
+.Login
 {
 
    width: 300px;
@@ -59,7 +59,7 @@ margin-right: 300px;
 border-style: solid rgb(19, 52, 240);
 border-radius: 4px;
 }
-.login h1
+.Login h1
 
 {
     color: rgb(6, 131, 248);
@@ -98,7 +98,7 @@ margin-bottom: 10px;;
     width: 15px;
     
 }
-.Login,.Home
+/* .Login,.Home
 {
     display: none;
-}
+} */

@@ -13,7 +13,7 @@ var firebaseConfig = {
     firebase.initializeApp(firebaseConfig);
     
 
-    firebase.auth();
+   
     
     function login()
     {
@@ -47,7 +47,7 @@ var firebaseConfig = {
       const email = document.getElementById("email_field").value;
       const password = document.getElementById("password_field").value;
     firebase.auth().createUserWithEmailAndPassword(email, password)
-    firebase.auth().signInWithEmailAndPassword(email, password)
+    // firebase.auth().signInWithEmailAndPassword(email, password)
     .catch((error) => {
       var errorCode = error.code;
       var errorMessage = error.message;
@@ -68,16 +68,9 @@ var firebaseConfig = {
       
       document.getElementsById("Home").style.display = "none";
       document.getElementsById("Login").style.display = "block";
-
-      
-    }
-    
-    
-    
-  });
-  
-    
-    function signOut(){
+     }
+    });
+   function signOut(){
       
       firebase.auth().signOut();
       
