@@ -1,6 +1,6 @@
-// Your web app's Firebase configuration
+
 var firebaseConfig = {
-  //firebase config stuff
+ 
   apiKey: "AIzaSyDptTWf--nlTNfIOEjn6Bry-hyDZCI-SC0",
     authDomain: "gamebase-2ead4.firebaseapp.com",
     projectId: "gamebase-2ead4",
@@ -9,38 +9,73 @@ var firebaseConfig = {
     appId: "1:13800363077:web:7fa39de574402683aebf2c",
     measurementId: "G-5EYF0322F4" 
     };
-    // Initialize Firebase
+    // Initialize Firebasesadaeds
     firebase.initializeApp(firebaseConfig);
     
-    const auth = firebase.auth();
+
+    firebase.auth();
     
+    function login()
+    {
+     
+      var email = document.getElementById("email_field").value;
+      var password = document.getElementById("password_field").value;
+      firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
     
-    function signUp(){
+        window.alert("Error : " + errorMessage);
+    
+        // ...
+      });
+    
+    }
+//       const promise = firebase.auth().signInWithEmailAndPassword(email, password);
+//  promise.catch(e => alert(e.message));
+  // .catch((error) => {
+  //   var errorCode = error.code;
+  //   var errorMessage = error.message;
+  //   alert("ERROR: " +errorMessage);
+  //   alert("ERROR: " +errorCode);
+  // });
+  //   }
+    
+    function signUp()
+    {
       
-      var email = document.getElementById("email");
-      var password = document.getElementById("password");
+      const email = document.getElementById("email_field").value;
+      const password = document.getElementById("password_field").value;
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+    firebase.auth().signInWithEmailAndPassword(email, password)
+    .catch((error) => {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      alert("ERROR: " +errorCode);
+      alert("ERROR: " +errorMessage)
+      // ..
+    });
+  }
+  const auth = firebase.auth();
+  auth.onAuthStateChanged(function(user){
+    
+    if(user){
+    document.getElementsById(Home).style.display = "block";
+    document.getElementsById(Login).style.display = "none";
+
+
+    }else{
       
-      const promise = auth.createUserWithEmailAndPassword(email.value, password.value);
-      promise.catch(e => alert(e.message));
+      document.getElementsById(Home).style.display = "none";
+      document.getElementsById(Login).style.display = "block";
+
       
-      alert("Signed Up");
     }
     
     
     
-    function signIn(){
-      
-      var email = document.getElementById("email");
-      var password = document.getElementById("password");
-      
-      const promise = auth.signInWithEmailAndPassword(email.value, password.value);
-      promise.catch(e => alert(e.message));
-      
-      
-      
-      
-    }
-    
+  });
+  
     
     function signOut(){
       
@@ -51,27 +86,7 @@ var firebaseConfig = {
     
     
     
-    auth.onAuthStateChanged(function(user){
-      
-      if(user){
-        
-        var email = user.email;
-        alert("Active User " + email);
-        
-        //Take user to a different or home page
-  
-        //is signed in
-        
-      }else{
-        
-        alert("No Active User");
-        //no user is signed in
-      }
-      
-      
-      
-    });
-    
+ 
   
   
 
