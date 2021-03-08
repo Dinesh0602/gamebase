@@ -51,10 +51,10 @@ NAV a
 {
 
    width: 300px;
-box-shadow: 0 0 10px 0px rgba(0,0,0,0.3) ;
+box-shadow: 0 0 10px 0px rgba(0,0,0,0.1) ;
     background-color: white;
 padding:20px;
-margin: 6% auto 0px ;
+margin: 7% auto  ;
 margin-right: 300px;
 border-style: solid rgb(19, 52, 240);
 border-radius: 4px;
