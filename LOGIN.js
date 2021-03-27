@@ -9,7 +9,7 @@ var firebaseConfig = {
     appId: "1:13800363077:web:7fa39de574402683aebf2c",
     measurementId: "G-5EYF0322F4" 
     };
-    // Initialize Firebasesadaeds
+    
     firebase.initializeApp(firebaseConfig);
     
 
@@ -61,9 +61,34 @@ var firebaseConfig = {
       firebase.auth().signOut();
       alert("Signed out");
       window.location.href = "Login.html";
+  }
+  // let search = document.getElementById("search");
+  // search.addEventListener("keyup",filternames);
+  function filternames() {
+    const filtervalue = document.getElementById('search').value.toUpperCase();
+    
+    const ul = document.getElementById('ul');
+    const li = ul.querySelectorAll('li.names');
+    for(var i=0;i< li.length;i++)
+    {
       
-      
-    }
+      let a = li[i].getElementsByTagName("a")[0];
+    
+      if(a.innerText.toUpperCase().indexOf(filtervalue)>-1){
+        li[i].style.display="block";
+      } else  {
+        li[i].style.display="none";
+      }
+      }
+      for(var i=0;i<li.length;i++){
+      if (filtervalue.length==0) {
+        li[i].style.display="none";
+      }
+        
+      }
+
+  }
+
     
     
     
