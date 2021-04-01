@@ -22,22 +22,31 @@ var firebaseConfig = {
       var password = document.getElementById("password_field").value;
       firebase.auth().signInWithEmailAndPassword(email, password)
       .then(user => {
+
        console.log(user);
-        
+      
         alert("Welcome " +email);
         
         window.location.href = "Home.html";
+        var email = document.getElementById("email_field").value;
+  // if (email = "buruboyinadinesh@gmail.com"){
+  //   document.getElementById("gameurl").style.display="block";
+  //  document.getElementById("gameimg").style.display="block";
+  //   document.getElementById("gamename").style.display="block";
+  // }else{
+  //   document.getElementById("gameurl").style.display="none";
+  //   document.getElementById("gameimg").style.display="none";
+  //   document.getElementById("gamename").style.display="none";
+  // }
       }).catch(function(error) {
         
         var errorCode = error.code;
         var errorMessage = error.message;
     
         window.alert("Error : " + errorMessage);
-    
-        
-      });
-    
-    }
+     });
+  }
+  
 
     
     function signUp()
@@ -80,14 +89,13 @@ var firebaseConfig = {
         li[i].style.display="none";
       }
       }
-      for(var i=0;i<li.length;i++){
       if (filtervalue.length==0) {
+      for(var i=0;i<li.length;i++){
+      
         li[i].style.display="none";
-      }
-        
-      }
+      } } }
+      // to initialize firestore
 
-  }
 
     
     

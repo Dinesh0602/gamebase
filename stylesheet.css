@@ -113,3 +113,51 @@ margin-bottom: 10px;;
     text-decoration: none;
    color: black;
 }
+
+ #gameimg
+{
+    text-align: center;
+    margin-left:45%;
+    border-style: solid;
+    font-weight: bold;
+    width: 200px;
+    text-align:center;
+}
+#gamename
+{
+    
+    text-align: center;
+    margin-left:45%;
+    border-style: solid;
+    font-weight: bold;
+    width: 200px;
+    text-align:center;
+}
+ #gameurl
+{
+     text-align: center;
+    margin-left: 20%;
+    border-style: solid;
+    font-weight: bold;
+    width: 200px;
+    text-align:center;
+}
+#addgame
+{
+    margin-left: 50%;
+    color: blue;
+    background-color:  rgba(21, 224, 191, 0.712)
+}
+.column a 
+{
+    text-decoration: none;
+     color: red ;
+}
+.column img{
+    width: 100% ;
+}
+.column h3
+{
+    background-color: rgb(96, 4, 124);
+    text-align: center;
+}

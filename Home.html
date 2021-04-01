@@ -5,20 +5,16 @@
     <title>GameBase</title>
 <link rel="stylesheet" href="stylesheet.css">
 <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
-
 <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
 <script src="LOGIN.js"></script>
 </head>
-
-   
 <body>
-     
-    <heading>
+<heading>
     <h1 ID = "heading"> <STRONG>ONELINE GAMES</STRONG></h1>
 </heading>
 <nav>
  <A HREF="Home.html">HOME</A>&nbsp;&nbsp;|&nbsp;&nbsp;  
- 
  <A HREF="BUBBLESHOOTER.html">BUBBLE SHOOTER</A>&nbsp;&nbsp;|&nbsp;&nbsp; 
  <A HREF="PUZZLE.html">PUZZLE</A>&nbsp;&nbsp;|&nbsp;&nbsp; 
 <A HREF="QUIZ.html">QUIZ</A>&nbsp;&nbsp;|&nbsp;&nbsp; 
@@ -27,7 +23,6 @@
 <A HREF="SPORT.html">SPORT</A>&nbsp;&nbsp;|&nbsp;&nbsp; 
 <A HREF="JUMP&RUN.html">JUMP & RUN</A>&nbsp;&nbsp;|&nbsp;&nbsp; 
 <A HREF="CARDS.html">CARDS</A>&nbsp;&nbsp;|&nbsp;&nbsp; 
-
 <button onclick="signOut()" style="float: right;width: 80px;height: 30px;margin-bottom: 0px;color: rgb(248, 70, 6);background-color:  lightgreen;cursor: pointer;" type="button">Log Out</button>
 </nav>
 <br>
@@ -103,7 +98,6 @@
     <li class="names" style="border:2px solid black; "><a href="https://play.famobi.com/solitaire-classic-christmas">Solitare classic christmas</a></li>
     <li class="names" style="border:2px solid black; "><a href="https://play.famobi.com/solitaire-legend">Solitare Legend</a></li>
 </ul>
-    
 <br>
 <div class="row">
   <div class="column">
@@ -117,8 +111,7 @@
       </div>
       <div class="column">
           <a href="https://play.famobi.com/element-blocks"style="text-decoration: none; color: red ;"><img src="images/ElementBlocksTeaser.jpg" width=100%><h3 style="background-color: rgb(96, 4, 124);text-align: center;">Elements Blocks</h3></a>
-          
-      </div>
+          </div>
       <div class="column">
 <a href="https://play.famobi.com/8-ball-billiards-classic"style="text-decoration: none; color: red ;"><img src="images/8BallBilliardsClassicTeaser.jpg"width=100%><h3 style="background-color: rgb(96, 4, 124);text-align: center;">8Ball Billiards</h3></a>
       </div>
@@ -131,7 +124,72 @@
       <div class="column">
           <a href="https://play.famobi.com/bus-parking-3d"style="text-decoration: none; color: red ;"><img src="images/BusParking3dTeaser.jpg"width=100%> <h3 style="background-color: rgb(96, 4, 124);text-align: center;" >Bus<sub>3D</sub>Parking</h3></a>
       </div>
+      <div class="column" id="addingnewgame">
+             <a href=""style="" id="newgamelink" class="newgamelink"><img src=""> <h3 id="newgamename" ></h3></a>
+    </div>
   </div>
+  <form id="add-newgame">
+    <input type="text" id="gameurl" name="Gameurl" placeholder="ENTER NEW GAME URL" ><br><br>
+    <input type="text" id="gameimg" name="Gameimgurl" placeholder="ENTER NEW GAME IMG URL" ><br><br>
+  <input type="text" id="gamename" name="Gamename" placeholder="ENTER NEW GAME NAME" ><br><br>
+  <button id="addgame">ADD GAME</button>
+  </form>
+  <script>
+  var form = document.querySelector("#add-newgame");    
+form.addEventListener('submit',(e) =>
+{
+    
+  e.preventDefault();
+  db.collection('New Game').add(
+    {
+      gamename: form.Gamename.value,
+      gameimglink : form.Gameimgurl.value,
+      gameurl: form.Gameurl.value
+    });
+    form.Gamename.value = '';
+    form.Gameimgurl.value = '';
+    form.Gameurl.value = '';
+})
+var db = firebase.firestore();
+db.settings({ timestampsInSnapshots: true }); 
+var newgame = document.querySelector('#addingnewgame');
+
+function addnewgame(doc){
+  let a = document.createElement('a');
+  a.setAttribute('data-id', doc.id);
+
+  let gamelink ;
+  gamelink = doc.data().gameurl;
+  a.href = gamelink.value;
+  a.setAttribute("href" , gamelink);
+
+  gameimage =  doc.data().gameimglink;
+   let img = document.createElement('img');
+  img.setAttribute("src", gameimage);
+  a.appendChild(img);
+  newgame.appendChild(a);
+  let gamename ;
+  gamename = doc.data().gamename;
+  var   link = document.createElement("h3");
+ var txt = document.createTextNode(gamename.value);
+ link.appendChild(txt);
+  a.appendChild(link);
+ }
+ 
+ 
+     
+  
+
+  
 
 
+db.collection('New Game').get().then((snapshot) => {
+  snapshot.docs.forEach(doc =>
+    {
+      addnewgame(doc);
+    })
+})
+
+  </script>
+  
 </body>
