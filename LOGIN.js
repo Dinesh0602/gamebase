@@ -53,13 +53,26 @@ var firebaseConfig = {
       const email = document.getElementById("email_field").value;
       const password = document.getElementById("password_field").value;
     firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then(user => {
+        
+      console.log(user);
+      
+       alert("Welcome " +email);
+      
+     
+     window.location.href = "Home.html";
+         
+         
+       
     
+
+     })
     .catch((error) => {
       var errorCode = error.code;
       var errorMessage = error.message;
       alert("ERROR: " +errorCode);
       alert("ERROR: " +errorMessage)
-      
+      window.alert("Error : " + errorMessage);
     });
   }
   var db = firebase.firestore();
@@ -100,11 +113,11 @@ newuser.addEventListener('submit',(e) =>
 
    function signOut(){
       
-      firebase.auth().signOut();
+      firebase.auth().signOut().then(() => {
       alert("Signed out");
-      window.location.href = "Login.html";
+      window.location.href = "index.html";
       localStorage.removeItem("nowemail");
-  }
+  })}
   
   function filternames() {
     const filtervalue = document.getElementById('search').value.toUpperCase();
@@ -127,7 +140,7 @@ newuser.addEventListener('submit',(e) =>
       
         li[i].style.display="none";
       } } }
-      // to initialize firestore
+     
      
      
       var form = document.querySelector("#add-newgame");    
@@ -186,43 +199,6 @@ newuser.addEventListener('submit',(e) =>
             a.appendChild(link);
             div.appendChild(a);
             newgame.appendChild(div);
-
-// var gamecategory = doc.data().category;
-
-//             if (gamecategory.toUpperCase() == "ARCADE" ){
-             
-//               <script src = "arcade.js"></script>
-//               // var newgamearcade = document.querySelector('.row5');
-//               // newgamearcade.appendChild(div);
-//             }
-//             if (gamecategory.toUpperCase() == "BUBBLESHOOTER" ){
-//               var newgamearcade = document.querySelector('.row2');
-//               newgamearcade.appendChild(div);
-//             }
-//             if (gamecategory.toUpperCase() == "PUZZLE" ){
-//               var newgamearcade = document.querySelector('.row3');
-//               newgamearcade.appendChild(div);
-//             }
-//             if (gamecategory.toUpperCase() == "QUIZ" ){
-//               var newgamearcade = document.querySelector('.row4');
-//               newgamearcade.appendChild(div);
-//             }
-//             if (gamecategory.toUpperCase() == "RACING" ){
-//               var newgamearcade = document.querySelector('.row6');
-//               newgamearcade.appendChild(div);
-//             }
-//             if (gamecategory.toUpperCase() == "SPORT" ){
-//               var newgamearcade = document.querySelector('.row7');
-//               newgamearcade.appendChild(div);
-//             }
-//             if (gamecategory.toUpperCase() == "JUMP&RUN" ){
-//               var newgamearcade = document.querySelector('.row8');
-//               newgamearcade.appendChild(div);
-//             }
-//             if (gamecategory.toUpperCase() == "CARDS" ){
-//               var newgamearcade = document.querySelector('.row9');
-//               newgamearcade.appendChild(div);
-//             }
 
            }
            

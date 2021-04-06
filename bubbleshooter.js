@@ -17,7 +17,7 @@ function signOut(){
       
     firebase.auth().signOut();
     alert("Signed out");
-    window.location.href = "Login.html";
+    window.location.href = "index.html";
     localStorage.removeItem("nowemail");
 }
 function filternames() {
