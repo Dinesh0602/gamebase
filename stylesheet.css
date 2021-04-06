@@ -30,6 +30,11 @@ NAV a
    padding:5px;
   
   }
+  
+  .row1{
+    float: left;
+}
+
 #heading2
 {
     font-style: oblique;
@@ -107,57 +112,46 @@ margin-bottom: 10px;;
     text-align: center;
     margin-left: 0px;
     display: none;
+    border: 2px solid black;
     }
 .names a 
 {
     text-decoration: none;
    color: black;
 }
+#add-newgame,#callingnewuser
+{
+   
+    margin-left: 45%;;
+    text-align: center;
+   
+    font-weight: bold;
+    width: 200px;
+    text-align:center;
+    display: none;
+}
 
- #gameimg
+
+#addgame,#addadmin
 {
-    text-align: center;
-    margin-left:45%;
-    border-style: solid;
-    font-weight: bold;
-    width: 200px;
-    text-align:center;
-}
-#gamename
-{
-    
-    text-align: center;
-    margin-left:45%;
-    border-style: solid;
-    font-weight: bold;
-    width: 200px;
-    text-align:center;
-}
- #gameurl
-{
-     text-align: center;
-    margin-left: 45%;
-    border-style: solid;
-    font-weight: bold;
-    width: 200px;
-    text-align:center;
-}
-#addgame
-{
-    margin-left: 50%;
+    margin: 12px auto;
     color: blue;
-    background-color:  rgba(21, 224, 191, 0.712)
+    background-color:  rgba(21, 224, 191, 0.712);
+    
 }
-.column a 
+.column a,.column2 a
 {
     text-decoration: none;
-     color: red ;
+     color: red;
+    
 }
 .column img{
     width: 100% ;
+    float: left;
 }
 .column h3
 {
     background-color: rgb(96, 4, 124);
     text-align: center;
 }
+

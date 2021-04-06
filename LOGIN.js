@@ -20,24 +20,22 @@ var firebaseConfig = {
      
       var email = document.getElementById("email_field").value;
       var password = document.getElementById("password_field").value;
+     localStorage.setItem("nowemail",email);
       firebase.auth().signInWithEmailAndPassword(email, password)
+    
       .then(user => {
-
-       console.log(user);
-      
-        alert("Welcome " +email);
         
-        window.location.href = "Home.html";
-        var email = document.getElementById("email_field").value;
-  // if (email = "buruboyinadinesh@gmail.com"){
-  //   document.getElementById("gameurl").style.display="block";
-  //  document.getElementById("gameimg").style.display="block";
-  //   document.getElementById("gamename").style.display="block";
-  // }else{
-  //   document.getElementById("gameurl").style.display="none";
-  //   document.getElementById("gameimg").style.display="none";
-  //   document.getElementById("gamename").style.display="none";
-  // }
+       console.log(user);
+       
+        alert("Welcome " +email);
+       
+      
+      window.location.href = "Home.html";
+          
+          
+        
+     
+ 
       }).catch(function(error) {
         
         var errorCode = error.code;
@@ -46,7 +44,7 @@ var firebaseConfig = {
         window.alert("Error : " + errorMessage);
      });
   }
-  
+
 
     
     function signUp()
@@ -64,15 +62,50 @@ var firebaseConfig = {
       
     });
   }
- 
+  var db = firebase.firestore();
+  db.settings({ timestampsInSnapshots: true });
+  db.collection('ADMIN').get().then((snapshot) => {
+    snapshot.docs.forEach(doc =>
+      {
+        newuseradmin(doc);
+      })
+      })
+      function newuseradmin(doc){
+        var newuseremail = doc.data().admin;
+        var now = localStorage.getItem("nowemail");
+  if(now == newuseremail){
+    document.getElementById("add-newgame").style.display="block";
+    document.getElementById("callingnewuser").style.display = "block";
+  }
+      }
+var newuser = document.querySelector("#callingnewuser");
+
+newuser.addEventListener('submit',(e) =>
+    {
+        
+      e.preventDefault();
+      db.collection('ADMIN') .add(
+        {
+          admin: newuser.useremail.value,
+        });
+        newuser.useremail.value = '';
+      })
+
+
+
+
+
+
+
+
    function signOut(){
       
       firebase.auth().signOut();
       alert("Signed out");
       window.location.href = "Login.html";
+      localStorage.removeItem("nowemail");
   }
-  // let search = document.getElementById("search");
-  // search.addEventListener("keyup",filternames);
+  
   function filternames() {
     const filtervalue = document.getElementById('search').value.toUpperCase();
     
@@ -95,8 +128,107 @@ var firebaseConfig = {
         li[i].style.display="none";
       } } }
       // to initialize firestore
+     
+     
+      var form = document.querySelector("#add-newgame");    
+    form.addEventListener('submit',(e) =>
+    {
+        
+      e.preventDefault();
+      db.collection('New Game') .add(
+        {
+          gamename: form.Gamename.value,
+          gameimglink : form.Gameimgurl.value,
+          gameurl: form.Gameurl.value,
+          category: form.category.value,
+        });
+        form.Gamename.value = '';
+        form.Gameimgurl.value = '';
+        form.Gameurl.value = '';
+        form.category.value = '';
+    })
+    
+  
+          var newgame = document.querySelector('.row1');
+         
+         
+          var srh = document.getElementById("ul");
+          function addnewgame(doc){
+            var div = document.createElement('div');
+            div.className= 'column';
+            let a = document.createElement('a');
+            a.className = "gogo";
+           let srhn = document.createElement('li');
+           srhn.className = "names";
+           let lia = document.createElement('a');
+           let gamelink = doc.data().gameurl;
+           lia.href= gamelink;
+           lia.setAttribute("href" , gamelink);
+          let  gamename = doc.data().gamename;
+           lia.innerHTML = gamename;
+           srhn.appendChild(lia);
+           srh.appendChild(srhn);
+          
+            div.setAttribute('data-id', doc.id);
+           
+            a.setAttribute("href" , gamelink);
+          
+            gameimage =  doc.data().gameimglink;
+            
+             let img = document.createElement('img');
+            img.setAttribute("src", gameimage); 
+            a.appendChild(img);
 
+            
+           var   link = document.createElement("h3");
+           var txt = document.createTextNode(gamename);
+           link.appendChild(txt);
+            a.appendChild(link);
+            div.appendChild(a);
+            newgame.appendChild(div);
 
+var gamecategory = doc.data().category;
+            if (gamecategory.toUpperCase() == "ARCADE" ){
+              var newgamearcade = document.querySelector('.row5');
+              newgamearcade.appendChild(div);
+            }
+            if (gamecategory.toUpperCase() == "BUBBLESHOOTER" ){
+              var newgamearcade = document.querySelector('.row2');
+              newgamearcade.appendChild(div);
+            }
+            if (gamecategory.toUpperCase() == "PUZZLE" ){
+              var newgamearcade = document.querySelector('.row3');
+              newgamearcade.appendChild(div);
+            }
+            if (gamecategory.toUpperCase() == "QUIZ" ){
+              var newgamearcade = document.querySelector('.row4');
+              newgamearcade.appendChild(div);
+            }
+            if (gamecategory.toUpperCase() == "RACING" ){
+              var newgamearcade = document.querySelector('.row6');
+              newgamearcade.appendChild(div);
+            }
+            if (gamecategory.toUpperCase() == "SPORT" ){
+              var newgamearcade = document.querySelector('.row7');
+              newgamearcade.appendChild(div);
+            }
+            if (gamecategory.toUpperCase() == "JUMP&RUN" ){
+              var newgamearcade = document.querySelector('.row8');
+              newgamearcade.appendChild(div);
+            }
+            if (gamecategory.toUpperCase() == "CARDS" ){
+              var newgamearcade = document.querySelector('.row9');
+              newgamearcade.appendChild(div);
+            }
+
+           }
+           
+            db.collection('New Game').get().then((snapshot) => {
+            snapshot.docs.forEach(doc =>
+              {
+                addnewgame(doc);
+              })
+              })
     
     
     
