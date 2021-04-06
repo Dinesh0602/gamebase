@@ -173,7 +173,7 @@ newuser.addEventListener('submit',(e) =>
            
             a.setAttribute("href" , gamelink);
           
-            gameimage =  doc.data().gameimglink;
+           let gameimage =  doc.data().gameimglink;
             
              let img = document.createElement('img');
             img.setAttribute("src", gameimage); 
@@ -187,39 +187,42 @@ newuser.addEventListener('submit',(e) =>
             div.appendChild(a);
             newgame.appendChild(div);
 
-var gamecategory = doc.data().category;
-            if (gamecategory.toUpperCase() == "ARCADE" ){
-              var newgamearcade = document.querySelector('.row5');
-              newgamearcade.appendChild(div);
-            }
-            if (gamecategory.toUpperCase() == "BUBBLESHOOTER" ){
-              var newgamearcade = document.querySelector('.row2');
-              newgamearcade.appendChild(div);
-            }
-            if (gamecategory.toUpperCase() == "PUZZLE" ){
-              var newgamearcade = document.querySelector('.row3');
-              newgamearcade.appendChild(div);
-            }
-            if (gamecategory.toUpperCase() == "QUIZ" ){
-              var newgamearcade = document.querySelector('.row4');
-              newgamearcade.appendChild(div);
-            }
-            if (gamecategory.toUpperCase() == "RACING" ){
-              var newgamearcade = document.querySelector('.row6');
-              newgamearcade.appendChild(div);
-            }
-            if (gamecategory.toUpperCase() == "SPORT" ){
-              var newgamearcade = document.querySelector('.row7');
-              newgamearcade.appendChild(div);
-            }
-            if (gamecategory.toUpperCase() == "JUMP&RUN" ){
-              var newgamearcade = document.querySelector('.row8');
-              newgamearcade.appendChild(div);
-            }
-            if (gamecategory.toUpperCase() == "CARDS" ){
-              var newgamearcade = document.querySelector('.row9');
-              newgamearcade.appendChild(div);
-            }
+// var gamecategory = doc.data().category;
+
+//             if (gamecategory.toUpperCase() == "ARCADE" ){
+             
+//               <script src = "arcade.js"></script>
+//               // var newgamearcade = document.querySelector('.row5');
+//               // newgamearcade.appendChild(div);
+//             }
+//             if (gamecategory.toUpperCase() == "BUBBLESHOOTER" ){
+//               var newgamearcade = document.querySelector('.row2');
+//               newgamearcade.appendChild(div);
+//             }
+//             if (gamecategory.toUpperCase() == "PUZZLE" ){
+//               var newgamearcade = document.querySelector('.row3');
+//               newgamearcade.appendChild(div);
+//             }
+//             if (gamecategory.toUpperCase() == "QUIZ" ){
+//               var newgamearcade = document.querySelector('.row4');
+//               newgamearcade.appendChild(div);
+//             }
+//             if (gamecategory.toUpperCase() == "RACING" ){
+//               var newgamearcade = document.querySelector('.row6');
+//               newgamearcade.appendChild(div);
+//             }
+//             if (gamecategory.toUpperCase() == "SPORT" ){
+//               var newgamearcade = document.querySelector('.row7');
+//               newgamearcade.appendChild(div);
+//             }
+//             if (gamecategory.toUpperCase() == "JUMP&RUN" ){
+//               var newgamearcade = document.querySelector('.row8');
+//               newgamearcade.appendChild(div);
+//             }
+//             if (gamecategory.toUpperCase() == "CARDS" ){
+//               var newgamearcade = document.querySelector('.row9');
+//               newgamearcade.appendChild(div);
+//             }
 
            }
            
