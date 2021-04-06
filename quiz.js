@@ -57,7 +57,7 @@ db.collection('New Game').get().then((snapshot) => {
       var newgamearcade = document.querySelector('.row4');
       function addnewgamearcade(doc){
         var gamecategory = doc.data().category;
-        if (gamecategory.toUpperCase() == "ARCADE" ){
+        if (gamecategory.toUpperCase() == "QUIZ" ){
             var div = document.createElement('div');
             div.className= 'column';
             let a = document.createElement('a');
